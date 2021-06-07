@@ -1,0 +1,206 @@
+from tkinter import *
+
+
+def inserirAutor():
+    """
+        txtAutor.get() recupera o que foi digitado na caixa de texto txtAutor
+
+        AQUI A INSERCAO DE DADOS NO BD DEVE SER REALIZADA
+
+        txtAutor.delete(0,END) limpa o que estava escrito na caixa de texto txtAutor
+
+        lblmsg["text"] = 'MENSAGEM DE SUCESSO OU INSUCESSO'
+    """
+
+
+def inserirLivro():
+    """
+            txtLivro.get() recupera o que foi digitado na caixa de texto txtLivro
+
+            AQUI A INSERCAO DE DADOS NO BD DEVE SER REALIZADA
+
+            txtLivro.delete(0,END) limpa o que estava escrito na caixa de texto txtLivro
+
+            lblmsg["text"] = 'MENSAGEM DE SUCESSO OU INSUCESSO'
+    """
+
+
+def alterarAutor():
+    """
+        txtAutor.get() recupera o que foi digitado na caixa de texto txtAutor
+
+        AQUI A ALTERACAO DE DADOS NO BD DEVE SER REALIZADA
+
+        txtAutor.delete(0,END) limpa o que estava escrito na caixa de texto txtAutor
+
+        lblmsg["text"] = 'MENSAGEM DE SUCESSO OU INSUCESSO'
+    """
+
+
+def alterarLivro():
+    """
+            txtLivro.get() recupera o que foi digitado na caixa de texto txtLivro
+
+            AQUI A ALTERACAO DE DADOS NO BD DEVE SER REALIZADA
+
+            txtLivro.delete(0,END) limpa o que estava escrito na caixa de texto txtLivro
+
+            lblmsg["text"] = 'MENSAGEM DE SUCESSO OU INSUCESSO'
+    """
+
+
+def excluirAutor():
+    """
+        txtAutor.get() recupera o que foi digitdo na caixa de texto txtAutor
+
+        AQUI A EXCLUSAO DE DADOS DO BD DEVE SER REALIZADA
+
+        txtAutor.delete(0,END) limpa o que estava escrito na caixa de texto txtAutor
+
+        lblmsg["text"] = 'MENSAGEM DE SUCESSO OU INSUCESSO'
+    """
+
+
+def excluirLivro():
+    """
+            txtLivro.get() recupera o que foi digitdo na caixa de texto txtLivro
+
+            AQUI A EXCLUSAO DE DADOS DO BD DEVE SER REALIZADA
+
+            txtLivro.delete(0,END) limpa o que estava escrito na caixa de texto txtLivro
+
+            lblmsg["text"] = 'MENSAGEM DE SUCESSO OU INSUCESSO'
+    """
+
+
+def buscarAutor():
+    """
+        txtAutor.get() recupera o que foi digitado na caixa de texto txtAutor
+
+        AQUI A CONSULTA DE DADOS DO BD DEVE SER REALIZADA, RECUPERANDO O NOME DO AUTOR
+
+        lblmsg["text"] = 'MENSAGEM DE SUCESSO OU INSUCESSO'
+
+        txtAutor.delete(0,END) limpa o que estava escrito na caixa de texto txtAutor
+        txtAutor.insert(INSERT, idusuario) coloca idusuario na caixa de texto txtAutor
+    """
+
+
+def buscarLivro():
+    """
+            txtLivro.get() recupera o que foi digitado na caixa de texto txtLivro
+
+            AQUI A CONSULTA DE DADOS DO BD DEVE SER REALIZADA, RECUPERANDO O NOME DO LIVRO
+
+            lblmsg["text"] = 'MENSAGEM DE SUCESSO OU INSUCESSO'
+
+            txtLivro.delete(0,END) limpa o que estava escrito na caixa de texto txtLivro
+            txtLivro.insert(INSERT, idusuario) coloca idusuario na caixa de texto txtLivro
+    """
+
+
+def programa():
+    janela = Tk()
+
+    # ---
+
+    fonte = ("Helvetica", "9")
+
+    # ---
+
+    painelOrientacao = Frame(janela)
+    painelOrientacao["pady"] = 10
+    painelOrientacao.pack()
+
+    titulo = Label(painelOrientacao, text="Informe os dados do Livro:")
+    titulo["font"] = ("Helvetica", "10", "bold")
+    titulo.pack()
+
+    # ---
+
+    painelBusca1 = Frame(janela)
+    painelBusca1["padx"] = 20
+    painelBusca1["pady"] = 5
+    painelBusca1.pack()
+
+    lblautor = Label(painelBusca1, text="Nome do Autor:", font=fonte, width=15)
+    lblautor.pack(side=LEFT)
+
+    txtAutor = Entry(painelBusca1)
+    txtAutor["width"] = 30
+    txtAutor["font"] = fonte
+    txtAutor.pack(side=LEFT)
+
+    painelBotoesAutor = Frame(janela)
+    painelBotoesAutor["padx"] = 20
+    painelBotoesAutor["pady"] = 10
+    painelBotoesAutor.pack()
+
+    btnBuscar = Button(painelBotoesAutor, text="Buscar", font=fonte, width=10)
+    btnBuscar["command"] = buscarAutor
+    btnBuscar.pack(side=RIGHT)
+
+    bntInsert = Button(painelBotoesAutor, text="Inserir", font=fonte, width=12)
+    bntInsert["command"] = inserirAutor
+    bntInsert.pack(side=LEFT)
+
+    bntAlterar = Button(painelBotoesAutor, text="Alterar", font=fonte, width=12)
+    bntAlterar["command"] = alterarAutor
+    bntAlterar.pack(side=LEFT)
+
+    bntExcluir = Button(painelBotoesAutor, text="Excluir", font=fonte, width=12)
+    bntExcluir["command"] = excluirAutor
+    bntExcluir.pack(side=LEFT)
+
+    # ---
+
+    painelBusca2 = Frame(janela)
+    painelBusca2["padx"] = 20
+    painelBusca2["pady"] = 5
+    painelBusca2.pack()
+
+    lbllivro = Label(painelBusca2, text="Nome do Livro:", font=fonte, width=15)
+    lbllivro.pack(side=LEFT)
+
+    txtLivro = Entry(painelBusca2)
+    txtLivro["width"] = 30
+    txtLivro["font"] = fonte
+    txtLivro.pack(side=LEFT)
+
+    painelBotoesLivro = Frame(janela)
+    painelBotoesLivro["padx"] = 20
+    painelBotoesLivro["pady"] = 10
+    painelBotoesLivro.pack()
+
+    btnBuscar = Button(painelBotoesLivro, text="Buscar", font=fonte, width=10)
+    btnBuscar["command"] = buscarLivro
+    btnBuscar.pack(side=RIGHT)
+
+    bntInsert = Button(painelBotoesLivro, text="Inserir", font=fonte, width=12)
+    bntInsert["command"] = inserirLivro
+    bntInsert.pack(side=LEFT)
+
+    bntAlterar = Button(painelBotoesLivro, text="Alterar", font=fonte, width=12)
+    bntAlterar["command"] = alterarLivro
+    bntAlterar.pack(side=LEFT)
+
+    bntExcluir = Button(painelBotoesLivro, text="Excluir", font=fonte, width=12)
+    bntExcluir["command"] = excluirLivro
+    bntExcluir.pack(side=LEFT)
+
+    # ---
+
+    painelMensagens = Frame(janela)
+    painelMensagens["pady"] = 15
+    painelMensagens.pack()
+
+    lblmsg = Label(painelMensagens, text="Mensagem: ")
+    lblmsg["font"] = ("Helvetica", "9", "italic")
+    lblmsg.pack()
+
+    # ---
+
+    janela.mainloop()
+
+
+programa()
